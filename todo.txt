@@ -1,0 +1,21 @@
+Finished hooking CreateFileA.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+for all the notes, try to structure the program into classes and make it start looking like an actual project, espacially after POC is done
+-------------------------------------------------------------------------------------------------------------------------------------------
+Look at MSDN and loook for all:
+delete file functions,
+open file functions,
+create file functions,
+write file functions.
+
+than:
+look at socket functions (send,recv) and hook them as well
+
+POC IS OVER!!
+
+after:
+let the program feel as if it actually works, if it tried to read a file allow it, 
+if it tries to edit a file - clone it, let the program edit it, delete it.
+if it tried to send something emulate as if it did.
+if it tried to recv something send a buffer of nothing.
