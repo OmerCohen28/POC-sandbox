@@ -1,0 +1,18 @@
+open virus process from sandbox
+dll inject to the virus
+
+
+
+
+dll - 
+hooking files:
+- CreateFileA();
+- CreatefileW();
+- DeleteFileA();
+- DeleteFileW();
+- ReadFile();
+- ReadFileEx();
+- WriteFile();
+- WriteFileEx();
+- WriteFileGather();
+

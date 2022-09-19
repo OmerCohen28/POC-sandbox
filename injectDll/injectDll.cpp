@@ -1,10 +1,10 @@
-#include <iostream>
+﻿#include <iostream>
 #include <Windows.h>
 
 
 int main()
 {
-    const char name[] = {"D:\\c++ programs\\POC test\\inlineHook\\Debug\\inlineHook.dll"};
+    const char name[] = {"C:\\Users\\Omer Cohen\\OneDrive\\Documents\\Programming\\Sandbox\\POC-sandbox\\inlineHook\\Debug\\inlineHook.dll"};
     unsigned int len{ sizeof(name) + 1 };
     DWORD result = GetFullPathNameA(name,0,NULL,NULL);
     char* buf = new char[result];
@@ -20,7 +20,7 @@ int main()
     ZeroMemory(&pi, sizeof(pi));
 
     CreateProcessA(
-        "D:\\c++ programs\\POC test\\virus\\Debug\\virus.exe",
+        "C:\\Users\\Omer Cohen\\OneDrive\\Docuemnts\\Programming\\Sandbox\\POC-sandbox\\virus\\Debug\\virus.exe",
         NULL,
         NULL,
         NULL,
@@ -31,7 +31,7 @@ int main()
         (LPSTARTUPINFOA)&si,
         &pi
     );
-
+    std::cout << pi.hProcess << '\n';
     PVOID memAddr = (PVOID)VirtualAllocEx(
         pi.hProcess,
         NULL,
@@ -41,6 +41,7 @@ int main()
     );
 
     if (memAddr == NULL) {
+        std::cout << "here";
         DWORD err = GetLastError();
         std::cout << err;
         return 0;

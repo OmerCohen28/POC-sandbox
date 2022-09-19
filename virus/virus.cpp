@@ -16,7 +16,7 @@ int main()
 	if (file == INVALID_HANDLE_VALUE) {
 		std::cout << "nope\n";
 	}
-	char* buf = new char[100] {"hhhhhh"};
+	char* buf = new char[100] {"yohohohoho"};
 	std::cout << WriteFile(file, buf, 100, NULL, NULL) << '\n';
 	std::cout << true;
 
